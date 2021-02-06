@@ -1,39 +1,39 @@
- # Readme Generator
-  ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+ # README Generator
+  ![GitHub license](https://img.shields.io/badge/license-APACHE 2.0-blue.svg)
 
   ## Description
 
-  It is unclear when the convention began, but there are examples dating back to the mid 1970s.[4][5][6][7][8][9][1][better source needed] Early Macintosh system software installed a Read Me on the startup disk, and they commonly accompanied third-party software.
+  Your only chance of survival, if you are sincerely smitten, lies in hiding this fact from the woman you love, of feigning a casual detachment under all circumstances. What sadness there is in this simple observation! What an accusation against man! However, it had never occurred to me to contest this law, nor to imagine disobeying it: love makes you weak, and the weaker of the two is oppressed, tortured and finally killed by the other, who in his or her turn oppresses, tortures and kills without having evil intentions, without even getting pleasure from it, with complete indifference; that’s what men, normally, call love.
 
   ## Table of Contents
   
   * [Installation](#installation)
   
   * [Usage](#usage)
- 
+  
   * [License](#license)
   
-  * [Con tributing](#contributing)
+  * [Contributing](#contribution)
   
-  * [Test] (#test)
+  * [Test](#tests)
   
-  * [Questions] (#questions)
+  * [Questions](#questions)
   
   ## Installation 
   
   To install necessary dependencies, run the following command:
-  
+
   ```
   npm install
   ```
   
   ## Usage
-  git 
-  npm init
+
+  Your only chance of survival, if you are sincerely smitten, lies in hiding this fact from the woman you love, of feigning a casual detachment under all circumstances. What sadness there is in this simple observation! What an accusation against man! However, it had never occurred to me to contest this law, nor to imagine disobeying it: love makes you weak, and the weaker of the two is oppressed, tortured and finally killed by the other, who in his or her turn oppresses, tortures and kills without having evil intentions, without even getting pleasure from it, with complete indifference; that’s what men, normally, call love.
 
   ## License
 
-This project is licensed under the MIT license.
+This project is licensed under the APACHE 2.0 license.
   
   ## Contributing
   
@@ -43,7 +43,7 @@ This project is licensed under the MIT license.
   
   To run tests, write the following command:
   ```
-  npm test
+  undefined
   ```
   ## Questions
 

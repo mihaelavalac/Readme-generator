@@ -136,7 +136,7 @@ const askUser = () =>
       type: "input",
       name: "license",
       message: "What kind of License should your project have?",
-      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
     },
     {
       type: "input",
@@ -145,7 +145,7 @@ const askUser = () =>
     }, 
     {
       type: "input",
-      name: "test",
+      name: "tests",
       message: "How can the user test your application?"
     },
     { 
@@ -200,21 +200,22 @@ const generateReadme = (answers) => {
 
   ${renderLicenseLink(answers.license)}
   
-  * [Contributing](#contributing)
+  * [Contributing](#contribution)
   
-  * [Test](#test)
+  * [Test](#tests)
   
   * [Questions](#questions)
   
   ## Installation 
   
   To install necessary dependencies, run the following command:
-  
+
   \`\`\`
   ${answers.installation}
   \`\`\`
   
   ## Usage
+
   ${answers.usage}
 
   ${renderLicenseSection(answers.license)}
