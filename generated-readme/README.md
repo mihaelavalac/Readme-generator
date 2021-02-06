@@ -1,17 +1,19 @@
- # README generator
-  {}
+ # Readme Generator
+  ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Description
 
-  nice nice nice nice nice
+  It is unclear when the convention began, but there are examples dating back to the mid 1970s.[4][5][6][7][8][9][1][better source needed] Early Macintosh system software installed a Read Me on the startup disk, and they commonly accompanied third-party software.
 
   ## Table of Contents
   
   * [Installation](#installation)
   
   * [Usage](#usage)
+ 
+  * [License](#license)
   
-  * [Contributing](#contributing)
+  * [Con tributing](#contributing)
   
   * [Test] (#test)
   
@@ -22,11 +24,16 @@
   To install necessary dependencies, run the following command:
   
   ```
-  nmp install
+  npm install
   ```
   
   ## Usage
+  git 
   npm init
+
+  ## License
+
+This project is licensed under the MIT license.
   
   ## Contributing
   
@@ -36,7 +43,7 @@
   
   To run tests, write the following command:
   ```
-  mpn test
+  npm test
   ```
   ## Questions
 
