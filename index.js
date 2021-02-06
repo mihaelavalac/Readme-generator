@@ -112,7 +112,7 @@ const generateReadme = (answers) => {
   }. Also you can find more of my projects at [${answers.github}](https://github.com/${
     answers.github
   }/)
-  
+
   `
 
 }
@@ -122,9 +122,5 @@ askUser()
     writeFileAsync('generated-readme/README.md', generateReadme(answers))
   })
   .catch(error => {
-    if(error.isTtyError) {
-      //
-    } else{
-      //
-    }
+    console.log(error);
   });
