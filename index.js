@@ -222,7 +222,7 @@ const generateReadme = (answers) => {
   
   ## Contributing
   
-  ${answers.contributing}
+  ${answers.contributions}
   
   ##Tests
   
