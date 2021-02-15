@@ -136,11 +136,11 @@ const askUser = () =>
       type: "input",
       name: "license",
       message: "What kind of License should your project have?",
-      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
     {
       type: "input",
-      name: "contributions",
+      name: "contribution",
       message: "How can the user contribute to your project?"
     }, 
     {
@@ -220,9 +220,9 @@ const generateReadme = (answers) => {
 
   ${renderLicenseSection(answers.license)}
   
-  ## Contributing
+  ## Contribution
   
-  ${answers.contributions}
+  ${answers.contribution}
   
   ##Tests
   
