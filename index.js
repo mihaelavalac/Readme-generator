@@ -145,7 +145,7 @@ const askUser = () =>
     }, 
     {
       type: "input",
-      name: "tests",
+      name: "test",
       message: "How can the user test your application?"
     },
     { 
@@ -202,7 +202,7 @@ const generateReadme = (answers) => {
   
   * [Contributing](#contribution)
   
-  * [Test](#tests)
+  * [Test](#test)
   
   * [Questions](#questions)
   
@@ -223,7 +223,7 @@ const generateReadme = (answers) => {
   
   ${answers.contribution}
   
-  ##Tests
+  ## Test
   
   To run tests, write the following command:
   \`\`\`
