@@ -1,6 +1,6 @@
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
-const util = require('util');
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -125,7 +125,8 @@ const askUser = () =>
     {
       type: "input",
       name: "installation",
-      message: "How to install yur application?"
+      message: "How to install yur application?",
+      default: 'npm i',
     }, 
     {
       type: "input",
@@ -146,7 +147,8 @@ const askUser = () =>
     {
       type: "input",
       name: "test",
-      message: "How can the user test your application?"
+      message: "How can the user test your application?",
+      default: 'npm test',
     },
     { 
       type: "input",
