@@ -167,22 +167,7 @@ function renderLicenseBadge(license) {
 }
 
 //Returns license link
-function renderLicenseLink(license) {
-  if (license !== 'None') {
-    return `\n* [License](#license)\n`;
-  }
-  return '';
-}
 
-//Returns the license section of README
-function renderLicenseSection(license) {
-  if (license !== 'None') {
-    return `## License
-
-This project is licensed under the ${license} license.`;
-  }
-  return '';
-}
 
 
 // Generate the Readme file in the generate-readme folder.
@@ -240,13 +225,6 @@ const generateReadme = (answers) => {
   }/)
 
   `
-
 }
 
-askUser()
-  .then((answers) => {
-    writeFileAsync('generated-readme/README.md', generateReadme(answers))
-  })
-  .catch(error => {
-    console.log(error);
-  });
+
