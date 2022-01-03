@@ -28,4 +28,4 @@
   ![GPL-2.0](https://opensource.org/licenses/GPL-2.0)
 
   ## Badges
-  [![License: GPL v3](https://img.shields.io/badge/License-GPL-2.0)](https://opensource.org/licenses/GPL-2.0)
+  [![(https://img.shields.io/badge/License-GPL-2.0)]](https://opensource.org/licenses/GPL-2.0)

@@ -57,5 +57,5 @@ module.exports = fileData => {
   ![${header.license}](https://opensource.org/licenses/${header.license})
 
   ## Badges
-  [![License: GPL v3](https://img.shields.io/badge/License-${header.license})](https://opensource.org/licenses/${header.license})\n`;
+  [![(https://img.shields.io/badge/License-${header.license})]](https://opensource.org/licenses/${header.license})\n`;
 };
