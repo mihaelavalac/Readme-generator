@@ -1,9 +1,10 @@
 
-  # fff
+  # README Generator
 
   ## Description 
-  fffff
-  
+  This project is an application that help developers to write well structured README files to their projects.   
+  ![GPL-2.0](https://opensource.org/licenses/GPL-2.0)
+  ![image](https://img.shields.io/badge/license-GPL-2.0-blue.svg/) 
 
   ## Table of Contents 
   * [Installation](#installation)
@@ -12,23 +13,23 @@
   * [License](#license)
   
   ## Installation
-  fffff
+  Clone the project to your local machine. Make sure that node js is installed. 
 
   ## Usage 
-  fffff
+  
 
   ## Features
-  fffff
+  
 
   ## Contributing
-  fffff
+  
 
   ## Credits
-  fffff
+  undefined
   
   ## License
-  [MIT License](https://choosealicense.com/licenses/MIT License/)
+  ![GPL-2.0](https://opensource.org/licenses/GPL-2.0)
 
   ## Badges
-  [image](https://img.shields.io/badge/license-MIT License-brightgreen)
+  ![image](https://img.shields.io/badge/license-GPL-2.0-blue.svg/)
 
