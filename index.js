@@ -1,230 +1,146 @@
-const fs = require('fs');
-const path = require('path');
-const inquirer = require('inquirer');
+//Include packages needed for this application
+const inquirer = require("inquirer");
+const fs = require("fs");
+const generateMarkdown = require("./Develop/utils/generateMarkdown.js");
 
-const writeFileAsync = util.promisify(fs.writeFile);
-
-const licenseLinks = [
-  "http://unlicense.org/",
-  "https://opensource.org/licenses/Apache-2.0",
-  "https://www.boost.org/LICENSE_1_0.txt",
-  "https://opensource.org/licenses/BSD-3-Clause",
-  "https://opensource.org/licenses/BSD-2-Clause",
-  "http://creativecommons.org/publicdomain/zero/1.0",
-  "https://creativecommons.org/licenses/by/4.0/",
-  "https://creativecommons.org/licenses/by-sa/4.0/",
-  "https://creativecommons.org/licenses/by-nc/4.0/",
-  "https://creativecommons.org/licenses/by-nd/4.0/",
-  "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-  "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-  "https://opensource.org/licenses/EPL-1.0",
-  "https://www.gnu.org/licenses/gpl-3.0",
-  "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html",
-  "https://www.gnu.org/licenses/agpl-3.0",
-  "https://www.gnu.org/licenses/lgpl-3.0",
-  "https://www.gnu.org/licenses/fdl-1.3",
-  "https://opensource.org/licenses/IPL-1.0",
-  "https://opensource.org/licenses/ISC",
-  "https://opensource.org/licenses/MIT",
-  "https://opensource.org/licenses/MPL-2.0",
-  "https://opendatacommons.org/licenses/by/",
-  "https://opendatacommons.org/licenses/odbl/",
-  "https://opendatacommons.org/licenses/pddl/",
-  "https://opensource.org/licenses/Artistic-2.0",
-  "https://opensource.org/licenses/Artistic-2.0",
-  "https://opensource.org/licenses/OFL-1.1",
-  "https://opensource.org/licenses/Zlib",
-];
-
-const badgeLicenseKeys = [
-  "Unlicense-blue.svg",
-  "Apache%202.0-blue.svg",
-  "Boost%201.0-lightblue.svg",
-  "BSD%203--Clause-blue.svg",
-  "BSD%202--Clause-orange.svg",
-  "CC0%201.0-lightgrey.svg",
-  "CC%20BY%204.0-lightgrey.svg",
-  "CC%20BY--SA%204.0-lightgrey.svg",
-  "CC%20BY--NC%204.0-lightgrey.svg",
-  "CC%20BY--ND%204.0-lightgrey.svg",
-  "CC%20BY--NC--SA%204.0-lightgrey.svg",
-  "CC%20BY--NC--ND%204.0-lightgrey.svg",
-  "EPL%201.0-red.svg",
-  "GPLv3-blue.svg",
-  "GPL%20v2-blue.svg",
-  "AGPL%20v3-blue.svg",
-  "LGPL%20v3-blue.svg",
-  "FDL%20v1.3-blue.svg",
-  "IPL%201.0-blue.svg",
-  "ISC-blue.svg",
-  "MIT-yellow.svg",
-  "MPL%202.0-brightgreen.svg",
-  "ODC_BY-brightgreen.svg",
-  "ODbL-brightgreen.svg",
-  "PDDL-brightgreen.svg",
-  "Perl-0298c3.svg",
-  "Artistic%202.0-0298c3.svg",
-  "OFL%201.1-lightgreen.svg",
-  "Zlib-lightgrey.svg",
-];
-
-const licenses = [
-  "The Unlicence",
-  "Apache 2.0 License",
-  "Boost Software License 1.0",
-  "BSD 3-Clause License	",
-  "BSD 2-Clause License",
-  "CC0",
-  "Attribution 4.0 International",
-  "Attribution-ShareAlike 4.0 International",
-  "Attribution-NonCommercial 4.0 International",
-  "Attribution-NoDerivates 4.0 International",
-  "Attribution-NonCommmercial-ShareAlike 4.0 International",
-  "Attribution-NonCommercial-NoDerivatives 4.0 International",
-  "Eclipse Public License 1.0",
-  "GNU GPL v3	",
-  "GNU GPL v2",
-  "GNU AGPL v3",
-  "GNU LGPL v3	",
-  "GNU FDL v1.3",
-  "IBM Public License Version 1.0",
-  "ISC License (ISC)",
-  "The MIT License",
-  "Mozilla Public License 2.0",
-  "Attribution License (BY)",
-  "Open Database License (ODbL)",
-  "Public Domain Dedication and License (PDDL)",
-  "The Perl License",
-  "The Artistic License 2.0",
-  "SIL Open Font License 1.1",
-  "Zlib",
-];
-
-//Gathers the information about the project from the user by asking questions.
-const askUser = () => 
-  inquirer.prompt([
+const promptUser = () => {
+  return inquirer.prompt([
     {
       type: "input",
-      name: "github",
-      message: "What is your Github username?"
-    },
-    { type: "input",
-      name: "email",
-      message: "What is your Email address?"
-    },
-    { 
-      type: "input",
       name: "title",
-      message: "What is the title of your project?"
+      message: "What is the name of your project? (Required)",
+      validate: (titleInput) => {
+        if (titleInput) {
+          return true;
+        } else {
+          console.log("You need to enter a project name!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "checkbox",
+      name: "languages",
+      message: "What did you this project with? (Check all that apply)",
+      choices: [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "ES6",
+        "jQuery",
+        "Bootstrap",
+        "Node",
+      ],
     },
     {
       type: "input",
       name: "description",
-      message: "How can you describe your project?"
+      message:
+        "Provide a description of the project. Consider providing responses to the questions like: what was your motivation, why did you build this project, what problem does it solve, what did you learn, and  what makes your project stand out when describing your project. (Required)",
+      validate: (descriptionInput) => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log("You need to enter a project description!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "link",
+      message: "Enter the GitHub link to your project. (Required)",
+      validate: (linkInput) => {
+        if (linkInput) {
+          return true;
+        } else {
+          console.log("You need to enter a project GitHub link!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "link2",
+      message:
+        "If your project is deployed, enter the live link to your project.",
     },
     {
       type: "input",
       name: "installation",
-      message: "How to install yur application?",
-      default: 'npm i',
-    }, 
+      message: "If applicable, provide guidances for project installation.",
+    },
     {
       type: "input",
       name: "usage",
-      message: "How to use your application?"
+      message: "Provide instructions and examples for use. Include screenshots as needed.",
     },
-    { 
+    {
       type: "input",
-      name: "license",
-      message: "Chose the appropriate license for your project?",
-      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+      name: "features",
+      message:
+        "If applicable, provide a list with description of the features used/developed in your project.",
     },
     {
       type: "input",
       name: "contribution",
-      message: "How can the user contribute to your project?"
-    }, 
+      message:
+        "If applicable, add guidelines for other developers regarding how to contribute to your project.",
+    },
     {
       type: "input",
-      name: "test",
-      message: "How can the user test your application?",
-      default: 'npm test',
+      name: "credits",
+      message:
+        "If applicable, add the persons with their github account who contributed to your project.",
     },
-    { 
-      type: "input",
-      name: "questions",
-      message: "How can the user contact you for questions?"
+    {
+      type: "list",
+      name: "license",
+      message: "Select a license for your project (Chose one)",
+      choices: [
+        "GNU Affero General Public License v3.0",
+        "GNU General Public License v3.0",
+        "GNU Lesser General Public License v3.0",
+        "Mozilla Public License 2.0",
+        "Apache License 2.0",
+        "MIT License",
+        "Boost Software License 1.0",
+        "The Unlicense",
+      ],
     }
-    
   ]);
-
-//Returns license badge
-function renderLicenseBadge(license) {
-  if (license !== 'None') {
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-  }
-  return '';
-}
-
-//Returns license link
+};
 
 
 
-// Generate the Readme file in the generate-readme folder.
-const generateReadme = (answers) => {
-  return ` # ${answers.title}
-  ${renderLicenseBadge(answers.license)}
+const writeFile = (content) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile("./README.md", content, (err) => {
+      // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
+      if (err) {
+        reject(err);
+        // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+        return;
+      }
 
-  ## Description
-
-  ${answers.description}
-
-  ## Table of Contents
-  
-  * [Installation](#installation)
-  
-  * [Usage](#usage)
-
-  * ${renderLicenseLink(answers.license)}
-  
-  * [Contributing](#contribution)
-  
-  * [Test](#test)
-  
-  * [Questions](#questions)
-  
-  ## Installation 
-  
-  To install necessary dependencies, run the following command:
-  \`\`\`
-  ${answers.installation}
-  \`\`\`
-  
-  ## Usage
-
-  ${answers.usage}
-
-  ${renderLicenseSection(answers.license)}
-  
-  ## Contribution
-  
-  ${answers.contribution}
-  
-  ## Test
-  
-  To run tests, write the following command:
-  \`\`\`
-  ${answers.test}
-  \`\`\`
-  ## Questions
-
-  If you have any questions, don't hesitated to contact me at  ${
-    answers.email
-  }. Also you can find more of my projects at [${answers.github}](https://github.com/${
-    answers.github
-  }/)
-
-  `
-}
+      // if everything went well, resolve the Promise and send the successful data to the `.then()` method
+      resolve({
+        ok: true,
+        message: "File created!",
+      });
+    });
+  });
+};
 
 
+
+promptUser() //.then (answer => console.log(answer));
+  .then((answer) => {
+    return writeFile(generateMarkdown(answer));
+  })
+  .then((writeFileResponse) => {
+    console.log(writeFileResponse);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
