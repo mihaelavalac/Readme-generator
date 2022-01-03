@@ -19,20 +19,6 @@ const promptUser = () => {
       },
     },
     {
-      type: "checkbox",
-      name: "languages",
-      message: "What did you this project with? (Check all that apply)",
-      choices: [
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "ES6",
-        "jQuery",
-        "Bootstrap",
-        "Node",
-      ],
-    },
-    {
       type: "input",
       name: "description",
       message:
@@ -88,30 +74,21 @@ const promptUser = () => {
         "If applicable, add guidelines for other developers regarding how to contribute to your project.",
     },
     {
-      type: "input",
-      name: "credits",
-      message:
-        "If applicable, add the persons with their github account who contributed to your project.",
-    },
-    {
       type: "list",
       name: "license",
       message: "Select a license for your project (Chose one)",
       choices: [
-        "GNU Affero General Public License v3.0",
-        "GNU General Public License v3.0",
-        "GNU Lesser General Public License v3.0",
-        "Mozilla Public License 2.0",
-        "Apache License 2.0",
-        "MIT License",
-        "Boost Software License 1.0",
-        "The Unlicense",
+        "GPL-2.0",
+        "GPL-3.0",
+        "MPL-2.0",
+        "Apache-2.0",
+        "MIT",
+        "BSL-1.0",
+        "Unlicense",
       ],
     }
   ]);
 };
-
-
 
 const writeFile = (content) => {
   return new Promise((resolve, reject) => {
@@ -131,8 +108,6 @@ const writeFile = (content) => {
     });
   });
 };
-
-
 
 promptUser() //.then (answer => console.log(answer));
   .then((answer) => {

@@ -1,34 +1,31 @@
 
-  # fff
+  # test
 
   ## Description 
-  fffff
-  
+  test  
+  ![GPL-2.0](https://opensource.org/licenses/GPL-2.0)
+  ![image](https://img.shields.io/badge/license-GPL-2.0-blue.svg/) 
 
   ## Table of Contents 
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
-  * [License](#license)
+  * [Features](#features)
+  * [Contributing](#contributing)
   
   ## Installation
-  fffff
+  test
 
   ## Usage 
-  fffff
+  test
 
   ## Features
-  fffff
+  test
 
   ## Contributing
-  fffff
-
-  ## Credits
-  fffff
+  test
   
   ## License
-  [MIT License](https://choosealicense.com/licenses/MIT License/)
+  ![GPL-2.0](https://opensource.org/licenses/GPL-2.0)
 
   ## Badges
-  [image](https://img.shields.io/badge/license-MIT License-brightgreen)
-
+  [![License: GPL v3](https://img.shields.io/badge/License-GPL-2.0)](https://opensource.org/licenses/GPL-2.0)
