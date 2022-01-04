@@ -133,7 +133,7 @@ const promptUser = () => {
 
 const writeFile = (content) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile("./README.md", content, (err) => {
+    fs.writeFile("./generated_file/README.md", content, (err) => {
       // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
       if (err) {
         reject(err);
