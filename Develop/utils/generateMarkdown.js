@@ -1,12 +1,11 @@
 module.exports = fileData => {
-  // destructure page data by section
   const { title, description, ...header } = fileData;
   return  `
-  # ${title}
+  <h1 align="center">  ${title} </h1> <img src="https://img.shields.io/badge/license-${header.license}-brightgreen">
 
   ## Description 
-  ${description}  
-  ![alt text](https://img.shields.io/badge/license-${header.license}-brightgreen)
+  <p>${description}<p>  
+  ![badge](https://img.shields.io/badge/license-${header.license}-brightgreen)
 
   ## Table of Contents 
   * [Installation](#installation)
