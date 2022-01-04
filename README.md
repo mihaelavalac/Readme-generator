@@ -25,7 +25,7 @@
   To contribute to the project just fork and install it on your computer, add the desired features/changes and push it back to the git. I will review the changes and merge them in the main branch. <br>
 
 
-  ###Contributors
+  <b>Contributors<b> <br>
   👪 Mihaela Valac
   
   ## License
