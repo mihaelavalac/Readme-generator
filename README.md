@@ -16,7 +16,7 @@
   
   ## Installation
   
-  Follow the following instructions to install this project: <br> 1. Download Nodejs to your computer. <br> 2. Clone the project repo to your computer<br> `git clone git@github.com:mihaelavalac/Readme-generator.git` <br>  3. Navigate to the root of the project through your text editor. <br> 4. Open terminal and run the following command  `npm init`  then, `npm install inquirer`  ,  `npm install fs` <br> 5. Run the  `node index.js`  <br>  6. Answer all prompted questions. <br> 7. Look up your generated file in the README.md  
+  Follow the following instructions to install this project: <br> 1. Download Nodejs to your computer. <br> 2. Clone the project repo to your computer  `git clone git@github.com:mihaelavalac/Readme-generator.git` <br>  3. Navigate to the root of the project through your text editor. <br> 4. Open terminal and run the following command  `npm init`  then, `npm install inquirer`  ,  `npm install fs` <br> 5. Run the  `node index.js`  <br>  6. Answer all prompted questions. <br> 7. Look up your generated file in the README.md  
 
   ## Usage 
   
