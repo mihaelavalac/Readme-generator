@@ -87,6 +87,21 @@ const promptUser = () => {
         "BSL-1.0",
         "Unlicense",
       ],
+    },{
+      type: "chose",
+      name: "badge",
+      message: "Select a badge for your project (Chose all that apply)",
+      choices: [
+        "license-GPL 2.0",
+        "license-GPL 3.0",
+        "license-MPL 2.0",
+        "license-Apache 2.0",
+        "license-MIT",
+        "license-BSL 1.0",
+        "license-Unlicense",
+        "javaScript-100%",
+        "Nodejs-50%",
+      ],
     }
   ]);
 };
