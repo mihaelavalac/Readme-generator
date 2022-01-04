@@ -5,7 +5,7 @@ module.exports = fileData => {
   const { title, description, ...header } = fileData;
 
   return  `
-  <h1 align="center">  ${title} </h1> <img style="float:right" src="https://img.shields.io/badge/license-${header.badge}-brightgreen">
+  <h1 align="center">  ${title} </h1> <img align="center" src="https://img.shields.io/badge/${header.badge}-blue">
 
   ## Description 
   <p><i>${description}</i><p>  
@@ -30,6 +30,8 @@ module.exports = fileData => {
   ## Contributing
   ${header.contributing} <br>
 
+
+  ###Contributors
   👪 ${header.contributors}
   
   ## License
@@ -38,7 +40,7 @@ module.exports = fileData => {
   ## Questions
 
   For questions please contact me on: <br/>
-  :octocat: [Github](https://github.com/${header.github}) <br>
+  :octocat: [Github: ${header.github}](https://github.com/${header.github}) <br>
   ✉️ Email: ${header.email}<br /><br />
   `;
  
