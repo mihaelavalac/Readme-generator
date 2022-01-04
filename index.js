@@ -35,6 +35,32 @@ const promptUser = () => {
     },
     {
       type: "input",
+      name: "github",
+      message: "What is your GitHub username? (Required)",
+      validate: (githubInput) => {
+        if (githubInput) {
+          return true;
+        } else {
+          console.log("You need to enter a GitHub username!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your email address? (Required)",
+      validate: (emailInput) => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log("You need to enter a GitHub username!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
       name: "link",
       message: "Enter the GitHub link to your project. (Required)",
       validate: (linkInput) => {
@@ -48,14 +74,8 @@ const promptUser = () => {
     },
     {
       type: "input",
-      name: "link2",
-      message:
-        "If your project is deployed, enter the live link to your project.",
-    },
-    {
-      type: "input",
       name: "installation",
-      message: "If applicable, provide guidances for project installation.",
+      message: "If applicable, provide guidances for project installation. To include a command use ` one line command` and ``` multiple rows command```. If you want to add new line use the HTML <br> tag.",
     },
     {
       type: "input",
@@ -66,13 +86,19 @@ const promptUser = () => {
       type: "input",
       name: "features",
       message:
-        "If applicable, provide a list with description of the features used/developed in your project.",
+        "If applicable, provide a description of the features in your project. For example you can add a paragraph followed by a <br> and an ![image](the path to your image here)",
     },
     {
       type: "input",
-      name: "contribution",
+      name: "contributing",
       message:
-        "If applicable, add guidelines for other developers regarding how to contribute to your project.",
+        "How to contribute to the project?",
+    },
+    {
+      type: "input",
+      name: "contributors",
+      message:
+        "Who contributed to the project?",
     },
     {
       type: "list",
@@ -87,10 +113,11 @@ const promptUser = () => {
         "BSL-1.0",
         "Unlicense",
       ],
-    },{
-      type: "chose",
+    },
+    {
+      type: "list",
       name: "badge",
-      message: "Select a badge for your project (Chose all that apply)",
+      message: "Select a badge for your project license (Chose all that apply)",
       choices: [
         "license-GPL 2.0",
         "license-GPL 3.0",
@@ -99,8 +126,6 @@ const promptUser = () => {
         "license-MIT",
         "license-BSL 1.0",
         "license-Unlicense",
-        "javaScript-100%",
-        "Nodejs-50%",
       ],
     }
   ]);
