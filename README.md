@@ -1,5 +1,5 @@
 
-  <h1 align="center">  README.md Generator </h1> <img align="center" src="https://img.shields.io/badge/license-MIT-blue">
+  <h1 align="center">  README.md Generator </h1> <img style="text-align:center" src="https://img.shields.io/badge/license-MIT-blue">
 
   ## Description 
   
