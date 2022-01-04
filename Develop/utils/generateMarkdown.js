@@ -1,39 +1,11 @@
-
-// const renderLicenseBadge = (license) => {
-//   licenseBandge ='';
-//   if(!license) {
-//     return '';
-//   } else {
-//     return `https://img.shields.io/badge/${license}-brightgreen`;
-//   }
-//   if (license='GNU Affero General Public License v3.0'){
-//     licenseBandge = 'https://img.shields.io/badge/${license}-blue.svg/'
-//   }
-
-// }
-
-// If there is no license, return an empty string
-// const renderLicenseLink = (license)  =>{
-
-// }
-
-// If there is no license, return an empty string
-// const renderLicenseSection = (license) =>{
-
-// }
-
-
 module.exports = fileData => {
-  // destructure page data by section
   const { title, description, ...header } = fileData;
-
   return  `
-  # ${title}
+  <h1 align="center">  ${title} </h1> <img src="https://img.shields.io/badge/license-${header.license}-brightgreen">
 
   ## Description 
-  ${description}  
-  ![${header.license}](https://opensource.org/licenses/${header.license})
-  ![image](https://img.shields.io/badge/license-${header.license}-blue.svg/) 
+  <p>${description}<p>  
+  ![badge](https://img.shields.io/badge/license-${header.license}-brightgreen)
 
   ## Table of Contents 
   * [Installation](#installation)
@@ -54,8 +26,5 @@ module.exports = fileData => {
   ${header.contribution}
   
   ## License
-  ![${header.license}](https://opensource.org/licenses/${header.license})
-
-  ## Badges
-  [![(https://img.shields.io/badge/License-${header.license})]](https://opensource.org/licenses/${header.license})\n`;
+  [${header.license}](https://opensource.org/licenses/${header.license})\n`;
 };
