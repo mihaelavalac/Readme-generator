@@ -1,11 +1,15 @@
+
+
+
 module.exports = fileData => {
   const { title, description, ...header } = fileData;
+
   return  `
-  <h1 align="center">  ${title} </h1> <img src="https://img.shields.io/badge/license-${header.license}-brightgreen">
+  <h1 align="center">  ${title} </h1> <img src="https://img.shields.io/badge/license-${header.badge}-brightgreen">
 
   ## Description 
   <p>${description}<p>  
-  ![badge](https://img.shields.io/badge/license-${header.license}-brightgreen)
+  ![badge](https://img.shields.io/badge/${header.badge}-brightgreen)
 
   ## Table of Contents 
   * [Installation](#installation)
@@ -26,5 +30,7 @@ module.exports = fileData => {
   ${header.contribution}
   
   ## License
-  [${header.license}](https://opensource.org/licenses/${header.license})\n`;
+  This application is covered by the [${header.license}](https://opensource.org/licenses/${header.license}) license. `;
+
+
 };
